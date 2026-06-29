@@ -1,0 +1,146 @@
+/* =========================
+   GOOGLE FONT
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+
+/* =========================
+   CSS VARIABLES
+========================= */
+
+:root{
+
+    /* Background */
+
+    --bg-primary:#0F172A;
+    --bg-secondary:#1E293B;
+    --bg-card:#273549;
+
+    /* Brand */
+
+    --primary:#2563EB;
+    --primary-hover:#1D4ED8;
+
+    --accent:#06B6D4;
+
+    /* Text */
+
+    --text-primary:#F8FAFC;
+    --text-secondary:#94A3B8;
+
+    /* Status */
+
+    --success:#22C55E;
+    --error:#EF4444;
+    --warning:#F59E0B;
+
+    /* Border */
+
+    --border:#334155;
+
+    /* Radius */
+
+    --radius-sm:8px;
+    --radius-md:12px;
+    --radius-lg:18px;
+
+    /* Shadow */
+
+    --shadow:0 10px 30px rgba(0,0,0,.25);
+
+    --transition-fast:
+    color .3s ease,
+    transform .3s ease,
+    background-color .3s ease;
+
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background-color:var(--bg-primary);
+
+    color:var(--text-primary);
+
+    min-height:100vh;
+
+    line-height:1.6;
+
+}
+
+
+/* =========================
+   LINKS
+========================= */
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button{
+
+    font-family:inherit;
+
+    border:none;
+
+    cursor:pointer;
+
+    background:none;
+
+}
+
+
+/* =========================
+   IMAGES
+========================= */
+
+img{
+
+    width:100%;
+    height:auto;
+    display:block;
+
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    width:min(1200px,90%);
+
+    margin:auto;
+
+}
