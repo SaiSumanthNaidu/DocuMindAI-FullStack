@@ -1,0 +1,267 @@
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    padding:6rem 0;
+}
+
+/* =========================
+   HERO CONTAINER
+========================= */
+
+.hero-container{
+    display:flex;
+    align-items:center;
+    gap:4rem;
+}
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero-content{
+    flex:1.2;
+}
+
+/* =========================
+   HERO IMAGE
+========================= */
+
+.hero-image{
+    flex:0.8;
+}
+
+/* =========================
+   HERO TITLE
+========================= */
+
+.hero-title{
+    font-size:4rem;
+    font-weight:700;
+    line-height:1.2;
+    margin:1.5rem 0;
+}
+
+/* =========================
+   HERO DESCRIPTION
+========================= */
+
+.hero-description{
+    font-size:1.125rem;
+    color:var(--text-secondary);
+    line-height:1.8;
+    max-width:600px;
+    margin-bottom:2rem;
+}
+
+/* =========================
+   HERO ACTIONS
+========================= */
+
+.hero-actions{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+}
+
+/* =========================
+   PRIMARY BUTTON
+========================= */
+
+.primary-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:0.9rem 1.8rem;
+    background-color:var(--primary);
+    color:white;
+    font-weight:600;
+    border-radius:var(--radius-md);
+    transition:var(--transition-fast);
+}
+
+.primary-btn:hover{
+    background-color:var(--primary-hover);
+    transform:translateY(-2px);
+}
+
+/* =========================
+   SECONDARY BUTTON
+========================= */
+
+.secondary-btn{
+    padding:0.9rem 1.8rem;
+    background:transparent;
+    color:var(--text-primary);
+    border:1px solid var(--border);
+    border-radius:var(--radius-md);
+    transition:var(--transition-fast);
+}
+
+.secondary-btn:hover{
+    background-color:var(--bg-card);
+}
+
+/* =========================
+   HERO BADGE
+========================= */
+
+.hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:0.5rem;
+
+    padding:0.5rem 1rem;
+
+    background:rgba(37,99,235,.1);
+
+    color:var(--primary);
+
+    border:1px solid rgba(37,99,235,.2);
+
+    border-radius:999px;
+
+    font-size:0.875rem;
+
+    font-weight:600;
+
+    margin-bottom:1.5rem;
+}
+
+/* =========================
+   TEXT GRADIENT
+========================= */
+
+.text-gradient{
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        var(--accent)
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+}
+
+/* =========================
+   UPLOAD CARD
+========================= */
+
+.upload-card{
+    width:420px;
+
+    padding:1.5rem;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow);
+}
+
+/* =========================
+   FILE PREVIEW
+========================= */
+
+.file-preview{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+
+    padding-bottom:1.5rem;
+
+    border-bottom:1px solid var(--border);
+}
+
+/* =========================
+   FILE ICON
+========================= */
+
+.file-icon{
+    width:56px;
+    height:56px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(37,99,235,.15);
+
+    border-radius:var(--radius-md);
+
+    font-size:1.5rem;
+}
+
+/* =========================
+   FILE INFO
+========================= */
+
+.file-info h4{
+    font-size:1rem;
+    font-weight:600;
+    color:var(--text-primary);
+}
+
+.file-info p{
+    font-size:.875rem;
+    color:var(--text-secondary);
+}
+
+/* =========================
+   PROCESSING STATUS
+========================= */
+
+.processing-status{
+    margin:1.5rem 0;
+}
+
+.processing-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:0.75rem;
+}
+
+.processing-header span:first-child{
+    color:var(--text-secondary);
+    font-size:.95rem;
+}
+
+.processing-header span:last-child{
+    color:var(--primary);
+    font-weight:600;
+}
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.progress-bar{
+    width:100%;
+    height:10px;
+
+    background:var(--bg-secondary);
+
+    border-radius:999px;
+
+    overflow:hidden;
+}
+
+.progress-fill{
+    width:92%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        var(--accent)
+    );
+
+    border-radius:inherit;
+}
