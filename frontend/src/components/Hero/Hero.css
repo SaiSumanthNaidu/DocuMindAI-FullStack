@@ -3,7 +3,7 @@
 ========================= */
 
 .hero{
-    padding:6rem 0;
+    padding:8rem 0 6rem;
 }
 
 /* =========================
@@ -13,6 +13,8 @@
 .hero-container{
     display:flex;
     align-items:center;
+    justify-content:space-between;
+
     gap:4rem;
 }
 
@@ -29,7 +31,16 @@
 ========================= */
 
 .hero-image{
-    flex:0.8;
+    flex:.8;
+
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:2rem;
+
+    min-height:550px;
 }
 
 /* =========================
@@ -264,4 +275,180 @@
     );
 
     border-radius:inherit;
+}
+
+/* =========================
+   RESULT LIST
+========================= */
+
+.result-list{
+    display:flex;
+    flex-direction:column;
+}
+
+.result-item{
+    display:flex;
+    align-items:center;
+    gap:.75rem;
+
+    padding:.9rem 0;
+
+    color:var(--text-primary);
+
+    border-bottom:1px solid var(--border);
+
+    transition:var(--transition-fast);
+}
+
+.result-item:last-child{
+    border-bottom:none;
+}
+
+.result-item:hover{
+    color:var(--primary);
+    transform:translateX(4px);
+}
+
+/* =========================
+   FLOATING ELEMENTS
+========================= */
+
+.floating{
+    position:absolute;
+
+    width:56px;
+    height:56px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:1.5rem;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:0 8px 24px rgba(37,99,235,.15);
+
+    animation:float 4s ease-in-out infinite;
+}
+
+.floating:hover{
+
+    transform:scale(1.08);
+
+    transition:var(--transition-fast);
+
+}
+
+.floating-pdf{
+    top:80px;
+    left: -18px;
+
+    animation-delay:0s;
+}
+
+.floating-sparkle{
+    top:0px;
+    right:60px;
+
+    animation-delay:1.2s;
+}
+
+.floating-ai{
+    bottom:15px;
+    right:40px;
+
+    animation-delay:2.4s;
+}
+
+/* =========================
+   FLOAT ANIMATION
+========================= */
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0) rotate(0deg);
+    }
+
+    50%{
+        transform:translateY(-10px) rotate(2deg);
+    }
+
+    100%{
+        transform:translateY(0) rotate(0deg);
+    }
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 992px){
+
+    .hero-container{
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .hero-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-title{
+        font-size: 3rem;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px){
+
+    .hero{
+        padding:6rem 0 4rem;
+    }
+
+    .hero-title{
+        font-size:3rem;
+    }
+
+    .hero-description{
+        font-size:1rem;
+    }
+
+    .hero-actions{
+        flex-direction:column;
+        width:100%;
+    }
+
+    .primary-btn,
+    .secondary-btn{
+        width:100%;
+        justify-content:center;
+    }
+
+    .hero-image{
+        width:100%;
+        min-height:450px;
+    }
+
+    .upload-card{
+        width:100%;
+        max-width:420px;
+    }
+
 }

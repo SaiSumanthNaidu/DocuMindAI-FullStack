@@ -1,5 +1,12 @@
 import "./Hero.css";
-import { FaMagic } from "react-icons/fa";
+import {
+  FaMagic,
+  FaFilePdf,
+  FaRobot,
+  FaCheckCircle,
+  FaClipboardList,
+  FaTable,
+} from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
 function Hero() {
@@ -59,7 +66,7 @@ function Hero() {
               <div className="file-preview">
 
                 <div className="file-icon">
-                  📄
+                  <FaFilePdf />
                 </div>
 
                 <div className="file-info">
@@ -86,17 +93,20 @@ function Hero() {
               {/* Result List */}
               <div className="result-list">
 
-                <div className="result-item">
-                  ✅ OCR Complete
-                </div>
+              <div className="result-item">
+                  <FaCheckCircle />
+                  <span>OCR Complete</span>
+              </div>
 
-                <div className="result-item">
-                  📝 AI Summary Ready
-                </div>
+              <div className="result-item">
+                  <FaClipboardList />
+                  <span>AI Summary Ready</span>
+              </div>
 
-                <div className="result-item">
-                  📊 Structured Data
-                </div>
+              <div className="result-item">
+                  <FaTable />
+                  <span>Structured Data</span>
+              </div>
 
               </div>
 
@@ -104,15 +114,15 @@ function Hero() {
 
             {/* Floating Elements */}
             <div className="floating floating-pdf">
-              📄
+                <FaFilePdf />
             </div>
 
             <div className="floating floating-ai">
-              🤖
+                <FaRobot />
             </div>
 
             <div className="floating floating-sparkle">
-              ✨
+                <FaMagic />
             </div>
 
           </div>
