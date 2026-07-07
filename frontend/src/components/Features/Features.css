@@ -1,0 +1,27 @@
+/* ==========================
+   FEATURES SECTION
+========================== */
+
+.features{
+    padding: 6rem 0;
+}
+
+/* ==========================
+   SECTION HEADER
+========================== */
+
+.section-header{
+    max-width: 700px;
+    margin: 0 auto 4rem;
+    text-align: center;
+}
+
+/* ==========================
+   FEATURES GRID
+========================== */
+
+.features-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
