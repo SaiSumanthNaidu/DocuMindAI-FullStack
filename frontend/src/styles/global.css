@@ -22,6 +22,9 @@
     --primary:#2563EB;
     --primary-hover:#1D4ED8;
 
+    /* Alias (used across components) */
+    --primary-color: var(--primary);
+
     --accent:#06B6D4;
 
     /* Text */
@@ -47,12 +50,22 @@
 
     /* Shadow */
 
-    --shadow:0 10px 30px rgba(0,0,0,.25);
+    --shadow-sm:
+    0 4px 12px rgba(0,0,0,.15);
 
-    --transition-fast:
-    color .3s ease,
-    transform .3s ease,
-    background-color .3s ease;
+    --shadow-lg:
+    0 12px 30px rgba(0,0,0,.30);
+
+    --shadow-xl:
+    0 18px 40px rgba(37,99,235,.15);
+
+    --glow:
+    0 0 40px rgba(37,99,235,.20);
+
+    /* TRANSITIONS */
+
+    --transition:
+    all .35s ease;
 
 }
 
@@ -86,6 +99,8 @@ body{
     min-height:100vh;
 
     line-height:1.6;
+
+    overflow-x:hidden;
 
 }
 
@@ -142,5 +157,27 @@ img{
     width:min(1200px,90%);
 
     margin:auto;
+
+}
+
+/* =========================
+   SECTION
+========================= */
+
+section{
+
+    position:relative;
+
+}
+
+/* =========================
+   TEXT SELECTION
+========================= */
+
+::selection{
+
+    background:var(--primary);
+
+    color:#fff;
 
 }
