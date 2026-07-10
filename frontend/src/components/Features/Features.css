@@ -1,27 +1,41 @@
 /* ==========================
-   FEATURES SECTION
+   FEATURE CARD
 ========================== */
 
-.features{
-    padding: 6rem 0;
+.feature-card{
+    background: var(--bg-card);
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-lg);
+
+    padding: 2rem;
+
+    transition: all 0.3s ease;
 }
 
 /* ==========================
-   SECTION HEADER
+   FEATURE ICON
 ========================== */
 
-.section-header{
-    max-width: 700px;
-    margin: 0 auto 4rem;
-    text-align: center;
-}
+.feature-icon{
+    width: 56px;
+    height: 56px;
 
-/* ==========================
-   FEATURES GRID
-========================== */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-.features-grid{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-md);
+
+    color: var(--primary-color);
+    font-size: 1.4rem;
+
+    margin-bottom: 1.5rem;
 }
