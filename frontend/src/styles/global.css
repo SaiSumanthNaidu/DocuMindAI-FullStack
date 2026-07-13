@@ -48,6 +48,16 @@
     --radius-md:12px;
     --radius-lg:18px;
 
+    /* =========================
+        SPACING
+    ========================= */
+
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 8rem;
+
     /* Shadow */
 
     --shadow-sm:

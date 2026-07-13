@@ -1,7 +1,10 @@
+import { useState } from "react";
 import "./UploadBox.css";
 import { FaCloudUploadAlt } from "react-icons/fa";
 
 function UploadBox() {
+    const [file, setFile] = useState(null);
+
     return (
         <section className="upload">
 

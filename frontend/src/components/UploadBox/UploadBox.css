@@ -1,1 +1,144 @@
-/* UploadBox Styles */
+/* ==========================
+   UPLOAD SECTION
+========================== */
+
+.upload{
+
+    padding:var(--space-xl) 0;
+
+}
+
+/* ==========================
+   UPLOAD CARD
+========================== */
+
+.upload-card{
+
+    width:100%;
+    max-width:720px;
+
+    margin:0 auto;
+
+    padding:var(--space-lg);
+
+    background:var(--bg-card);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+/* ==========================
+   UPLOAD ICON
+========================== */
+
+.upload-icon{
+
+    width:72px;
+    height:72px;
+
+    margin:0 auto var(--space-md);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    background:rgba(37,99,235,.08);
+
+    color:var(--primary);
+
+    font-size:2rem;
+
+    box-shadow:0 0 20px rgba(37,99,235,.15);
+
+}
+
+/* ==========================
+   UPLOAD TITLE
+========================== */
+
+.upload-title{
+
+    font-size:clamp(2rem,4vw,2.5rem);
+
+    font-weight:700;
+
+    text-align:center;
+
+    color:var(--text-primary);
+
+    margin-bottom:var(--space-sm);
+
+}
+
+/* ==========================
+   UPLOAD DESCRIPTION
+========================== */
+
+.upload-description{
+
+    max-width:520px;
+
+    margin:0 auto var(--space-lg);
+
+    color:var(--text-secondary);
+
+    text-align:center;
+
+    line-height:1.7;
+
+    font-size:1rem;
+
+}
+
+/* ==========================
+   UPLOAD BUTTON
+========================== */
+
+.upload-button{
+
+    display:inline-flex;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:0.9rem 2rem;
+
+    background:var(--primary);
+
+    color:var(--text-primary);
+
+    font-weight:600;
+
+    border-radius:var(--radius-md);
+
+    cursor:pointer;
+
+    transition:var(--transition-fast);
+
+}
+
+/* ==========================
+   BUTTON STATES
+========================== */
+
+.upload-button:hover{
+
+    background: var(--primary-hover);
+
+    transform: translateY(-2px);
+
+}
+
+.upload-button:focus{
+
+    outline: 3px solid rgba(37,99,235,.35);
+
+    outline-offset: 4px;
+
+}
