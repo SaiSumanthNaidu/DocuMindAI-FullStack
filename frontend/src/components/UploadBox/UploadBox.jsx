@@ -3,7 +3,17 @@ import "./UploadBox.css";
 import { FaCloudUploadAlt } from "react-icons/fa";
 
 function UploadBox() {
-    const [file, setFile] = useState(null);
+    const [selectedFile, setSelectedFile] = useState(null);
+
+    const handleFileChange = (event) => {
+
+        const file = event.target.files[0];
+
+        if (!file) return;
+
+        setSelectedFile(file);
+
+    };
 
     return (
         <section className="upload">
@@ -31,10 +41,22 @@ function UploadBox() {
                         Browse Files
                     </label>
 
+                    {selectedFile && (
+
+                        <p className="selected-file">
+
+                            📄 {selectedFile.name}
+
+                        </p>
+
+                    )}
+
                     <input
-                        id="file-upload"
                         type="file"
+                        id="file-upload"
                         hidden
+                        accept=".pdf,.jpg,.jpeg,.png"
+                        onChange={handleFileChange}
                     />
 
                     <div className="upload-info">
