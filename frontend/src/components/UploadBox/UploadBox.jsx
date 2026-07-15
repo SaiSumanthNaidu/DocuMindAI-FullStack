@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "./UploadBox.css";
 import { FaCloudUploadAlt } from "react-icons/fa";
 
 function UploadBox() {
     const [selectedFile, setSelectedFile] = useState(null);
+    const fileInputRef = useRef(null);
 
     const handleFileChange = (event) => {
 
@@ -12,6 +13,13 @@ function UploadBox() {
         if (!file) return;
 
         setSelectedFile(file);
+
+    };
+    const handleRemoveFile = () => {
+
+        setSelectedFile(null);
+
+        fileInputRef.current.value = "";
 
     };
 
@@ -37,21 +45,32 @@ function UploadBox() {
                     <label
                         htmlFor="file-upload"
                         className="upload-button"
+                        onClick={() => fileInputRef.current?.click()}
                     >
                         Browse Files
                     </label>
 
                     {selectedFile && (
 
-                        <p className="selected-file">
+                        <div className="selected-file-container">
 
-                            📄 {selectedFile.name}
+                            <p className="selected-file">
+                                📄 {selectedFile.name}
+                            </p>
 
-                        </p>
+                            <button
+                                className="remove-file-button"
+                                onClick={handleRemoveFile}
+                            >
+                                Remove File
+                            </button>
 
-                    )}
+                        </div>
+
+                    )}  
 
                     <input
+                        ref={fileInputRef}
                         type="file"
                         id="file-upload"
                         hidden
