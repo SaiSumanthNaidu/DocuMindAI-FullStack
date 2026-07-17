@@ -3,99 +3,83 @@ import "./UploadBox.css";
 import { FaCloudUploadAlt } from "react-icons/fa";
 
 function UploadBox() {
-    const [selectedFile, setSelectedFile] = useState(null);
-    const fileInputRef = useRef(null);
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
 
-    const handleFileChange = (event) => {
+  const fileInputRef = useRef(null);
 
-        const file = event.target.files[0];
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
 
-        if (!file) return;
+    if (!file) return;
 
-        setSelectedFile(file);
+    setSelectedFile(file);
+  };
+  const handleRemoveFile = () => {
+    setSelectedFile(null);
 
-    };
-    const handleRemoveFile = () => {
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  };
+  const handleAnalyzeDocument = () => {
+    setIsAnalyzing(true);
+  };
 
-        setSelectedFile(null);
+  return (
+    <section className="upload">
+      <div className="container">
+        <div className="upload-card">
+          <div className="upload-icon">
+            <FaCloudUploadAlt />
+          </div>
 
-        fileInputRef.current.value = "";
+          <h2 className="upload-title">Upload Your Document</h2>
 
-    };
+          <p className="upload-description">
+            Drag & drop your PDF or image here, or browse your files to start
+            AI-powered document processing.
+          </p>
 
-    return (
-        <section className="upload">
+          <label
+            htmlFor="file-upload"
+            className="upload-button"
+            onClick={() => fileInputRef.current?.click()}
+          >
+            Browse Files
+          </label>
 
-            <div className="container">
+          {selectedFile && (
+            <div className="selected-file-container">
+              <p className="selected-file">📄 {selectedFile.name}</p>
 
-                <div className="upload-card">
-
-                    <div className="upload-icon">
-                        <FaCloudUploadAlt />
-                    </div>
-
-                    <h2 className="upload-title">
-                        Upload Your Document
-                    </h2>
-
-                    <p className="upload-description">
-                        Drag & drop your PDF or image here, or browse your files to start AI-powered document processing.
-                    </p>
-
-                    <label
-                        htmlFor="file-upload"
-                        className="upload-button"
-                        onClick={() => fileInputRef.current?.click()}
-                    >
-                        Browse Files
-                    </label>
-
-                    {selectedFile && (
-
-                        <div className="selected-file-container">
-
-                            <p className="selected-file">
-                                📄 {selectedFile.name}
-                            </p>
-
-                            <button
-                                className="remove-file-button"
-                                onClick={handleRemoveFile}
-                            >
-                                Remove File
-                            </button>
-
-                        </div>
-
-                    )}  
-
-                    <input
-                        ref={fileInputRef}
-                        type="file"
-                        id="file-upload"
-                        hidden
-                        accept=".pdf,.jpg,.jpeg,.png"
-                        onChange={handleFileChange}
-                    />
-
-                    <div className="upload-info">
-
-                        <span>
-                            Supported: PDF • JPG • PNG
-                        </span>
-
-                        <span>
-                            Max Size: 10 MB
-                        </span>
-
-                    </div>
-
-                </div>
-
+              <button className="remove-file-button" onClick={handleRemoveFile}>
+                Remove File
+              </button>
             </div>
+          )}
+          <button onClick={handleAnalyzeDocument} disabled={isAnalyzing}>
+            {isAnalyzing ? "Analyzing..." : "Analyze Document"}
+          </button>
 
-        </section>
-    );
+          <input
+            ref={fileInputRef}
+            type="file"
+            id="file-upload"
+            hidden
+            accept=".pdf,.jpg,.jpeg,.png"
+            onChange={handleFileChange}
+          />
+
+          <div className="upload-info">
+            <span>Supported: PDF • JPG • PNG</span>
+
+            <span>Max Size: 10 MB</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export default UploadBox;

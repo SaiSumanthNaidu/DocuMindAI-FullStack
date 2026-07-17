@@ -2,143 +2,180 @@
    UPLOAD SECTION
 ========================== */
 
-.upload{
-
-    padding:var(--space-xl) 0;
-
+.upload {
+  padding: var(--space-xl) 0;
 }
 
 /* ==========================
    UPLOAD CARD
 ========================== */
 
-.upload-card{
+.upload-card {
+  width: 100%;
+  max-width: 720px;
 
-    width:100%;
-    max-width:720px;
+  margin: 0 auto;
 
-    margin:0 auto;
+  padding: var(--space-lg);
 
-    padding:var(--space-lg);
+  background: var(--bg-card);
 
-    background:var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 
-    border:1px solid rgba(255,255,255,.08);
+  border-radius: var(--radius-lg);
 
-    border-radius:var(--radius-lg);
-
-    box-shadow:var(--shadow-lg);
-
+  box-shadow: var(--shadow-lg);
 }
 
 /* ==========================
    UPLOAD ICON
 ========================== */
 
-.upload-icon{
+.upload-icon {
+  width: 72px;
+  height: 72px;
 
-    width:72px;
-    height:72px;
+  margin: 0 auto var(--space-md);
 
-    margin:0 auto var(--space-md);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+  border-radius: 50%;
 
-    border-radius:50%;
+  background: rgba(37, 99, 235, 0.08);
 
-    background:rgba(37,99,235,.08);
+  color: var(--primary);
 
-    color:var(--primary);
+  font-size: 2rem;
 
-    font-size:2rem;
-
-    box-shadow:0 0 20px rgba(37,99,235,.15);
-
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.15);
 }
 
 /* ==========================
    UPLOAD TITLE
 ========================== */
 
-.upload-title{
+.upload-title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
 
-    font-size:clamp(2rem,4vw,2.5rem);
+  font-weight: 700;
 
-    font-weight:700;
+  text-align: center;
 
-    text-align:center;
+  color: var(--text-primary);
 
-    color:var(--text-primary);
-
-    margin-bottom:var(--space-sm);
-
+  margin-bottom: var(--space-sm);
 }
 
 /* ==========================
    UPLOAD DESCRIPTION
 ========================== */
 
-.upload-description{
+.upload-description {
+  max-width: 520px;
 
-    max-width:520px;
+  margin: 0 auto var(--space-lg);
 
-    margin:0 auto var(--space-lg);
+  color: var(--text-secondary);
 
-    color:var(--text-secondary);
+  text-align: center;
 
-    text-align:center;
+  line-height: 1.7;
 
-    line-height:1.7;
-
-    font-size:1rem;
-
+  font-size: 1rem;
 }
 
 /* ==========================
    UPLOAD BUTTON
 ========================== */
 
-.upload-button{
+.upload-button {
+  display: inline-flex;
 
-    display:inline-flex;
+  justify-content: center;
+  align-items: center;
 
-    justify-content:center;
-    align-items:center;
+  padding: 0.9rem 2rem;
 
-    padding:0.9rem 2rem;
+  background: var(--primary);
 
-    background:var(--primary);
+  color: var(--text-primary);
 
-    color:var(--text-primary);
+  font-weight: 600;
 
-    font-weight:600;
+  border-radius: var(--radius-md);
 
-    border-radius:var(--radius-md);
+  cursor: pointer;
 
-    cursor:pointer;
-
-    transition:var(--transition-fast);
-
+  transition: var(--transition-fast);
 }
 
 /* ==========================
    BUTTON STATES
 ========================== */
 
-.upload-button:hover{
+.upload-button:hover {
+  background: var(--primary-hover);
 
-    background: var(--primary-hover);
-
-    transform: translateY(-2px);
-
+  transform: translateY(-2px);
 }
 
-.upload-button:focus{
+.upload-button:focus {
+  outline: 3px solid rgba(37, 99, 235, 0.35);
 
-    outline: 3px solid rgba(37,99,235,.35);
+  outline-offset: 4px;
+}
 
-    outline-offset: 4px;
+/* =========================
+   SELECTED FILE CONTAINER
+========================= */
 
+.selected-file-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+/* ==========================
+   SELECTED FILE
+========================== */
+
+.selected-file {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* ==========================
+   REMOVE FILE BUTTON
+========================== */
+
+.remove-file-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0.6rem 1rem;
+
+  background: transparent;
+
+  color: var(--danger);
+  border: 1px solid var(--danger);
+
+  border-radius: var(--radius-md);
+
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: var(--transition-fast);
+}
+
+.remove-file-button:hover {
+  background: rgba(239, 68, 68, 0.1);
+  transform: translateY(-2px);
 }
