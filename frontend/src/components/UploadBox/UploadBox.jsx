@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import "./UploadBox.css";
-import { FaCloudUploadAlt } from "react-icons/fa";
+import { FaCloudUploadAlt, FaTrashAlt } from "react-icons/fa";
 
 function UploadBox() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -17,6 +17,7 @@ function UploadBox() {
   };
   const handleRemoveFile = () => {
     setSelectedFile(null);
+    setIsAnalyzing(false);
 
     if (fileInputRef.current) {
       fileInputRef.current.value = "";
@@ -41,24 +42,31 @@ function UploadBox() {
             AI-powered document processing.
           </p>
 
-          <label
-            htmlFor="file-upload"
-            className="upload-button"
-            onClick={() => fileInputRef.current?.click()}
-          >
-            Browse Files
-          </label>
+          <div className="upload-actions">
+            <label
+              htmlFor="file-upload"
+              className="upload-button"
+              onClick={() => fileInputRef.current?.click()}
+            >
+              Browse Files
+            </label>
+          </div>
 
           {selectedFile && (
             <div className="selected-file-container">
               <p className="selected-file">📄 {selectedFile.name}</p>
 
               <button className="remove-file-button" onClick={handleRemoveFile}>
+                <FaTrashAlt />
                 Remove File
               </button>
             </div>
           )}
-          <button onClick={handleAnalyzeDocument} disabled={isAnalyzing}>
+          <button
+            className="analyze-button"
+            onClick={handleAnalyzeDocument}
+            disabled={!selectedFile || isAnalyzing}
+          >
             {isAnalyzing ? "Analyzing..." : "Analyze Document"}
           </button>
 

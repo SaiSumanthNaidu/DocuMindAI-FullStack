@@ -87,6 +87,18 @@
 }
 
 /* ==========================
+   UPLOAD ACTIONS
+========================== */
+
+.upload-actions {
+  display: flex;
+
+  justify-content: center;
+
+  margin-bottom: var(--space-md);
+}
+
+/* ==========================
    UPLOAD BUTTON
 ========================== */
 
@@ -157,10 +169,11 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  gap: 0.5rem;
 
   padding: 0.6rem 1rem;
 
-  background: transparent;
+  background: rgba(239, 68, 68, 0.1);
 
   color: var(--danger);
   border: 1px solid var(--danger);
@@ -176,6 +189,72 @@
 }
 
 .remove-file-button:hover {
-  background: rgba(239, 68, 68, 0.1);
+  background: rgba(239, 68, 68, 0.2);
   transform: translateY(-2px);
+}
+
+/* ==========================
+   ANALYZE BUTTON
+========================== */
+
+.analyze-button {
+  /* Layout */
+
+  width: 100%;
+
+  padding: 1rem 2rem;
+
+  /* Appearance */
+
+  background: var(--primary);
+
+  color: var(--text-primary);
+
+  border: none;
+
+  /* Shape */
+
+  border-radius: var(--radius-md);
+
+  /* Typography */
+
+  font-size: 0.9rem;
+
+  font-weight: 600;
+
+  /* Interaction */
+
+  cursor: pointer;
+
+  transition: var(--transition-fast);
+}
+
+.analyze-button:not(:disabled):hover {
+  background: var(--primary-hover);
+
+  transform: translateY(-2px);
+}
+
+.analyze-button:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+/* ==========================
+   UPLOAD INFO
+========================== */
+
+.upload-info {
+  display: flex;
+
+  justify-content: center;
+
+  gap: var(--space-md);
+
+  flex-wrap: wrap;
+
+  font-size: 0.9rem;
+
+  color: var(--text-secondary);
 }
